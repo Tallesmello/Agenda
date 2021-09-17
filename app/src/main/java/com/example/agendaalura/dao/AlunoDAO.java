@@ -51,6 +51,7 @@ public class AlunoDAO extends SQLiteOpenHelper {
         db.insert("Alunos", null, dados);
     }
 
+    @SuppressLint("Range")
     public List<Aluno> buscaAlunos()  {
         String sql = "SELECT * FROM Alunos;";
         SQLiteDatabase db = getWritableDatabase();// recupere aqui a referência para o banco de dados
@@ -72,7 +73,13 @@ public class AlunoDAO extends SQLiteOpenHelper {
         c.close();
 
         return alunos;
+    }
 
+    public void deleta(Aluno aluno) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        String [] params = {String.valueOf(aluno.getId())};
+        db.delete("Alunos", "id = ?", params);
     }
 
 }

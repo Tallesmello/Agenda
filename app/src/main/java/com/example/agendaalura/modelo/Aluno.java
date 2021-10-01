@@ -1,6 +1,8 @@
 package com.example.agendaalura.modelo;
 
-public class Aluno {
+import java.io.Serializable;
+
+public class Aluno implements Serializable {
     private Long id;
     private String nome;
     private String endereco;
@@ -8,7 +10,7 @@ public class Aluno {
     private String site;
     private Double nota;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

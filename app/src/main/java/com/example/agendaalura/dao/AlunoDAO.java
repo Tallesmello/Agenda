@@ -56,7 +56,6 @@ public class AlunoDAO extends SQLiteOpenHelper {
         dados.put("nota", aluno.getNota());
         return dados;
     }
-
     @SuppressLint("Range")
     public List<Aluno> buscaAlunos()  {
         String sql = "SELECT * FROM Alunos;";

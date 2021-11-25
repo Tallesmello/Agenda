@@ -33,9 +33,9 @@ public class ListaAlunoActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> lista, View item, int position, long id) {
                 Aluno aluno = (Aluno) listaAlunos.getItemAtPosition(position);
-                Intent abrirFormularioAluno = new Intent(ListaAlunoActivity.this, FormularioActivity.class);
-                abrirFormularioAluno.putExtra("aluno", aluno);
-                startActivity(abrirFormularioAluno);
+                Intent intentVaiProFormulario = new Intent(ListaAlunoActivity.this, FormularioActivity.class);
+                intentVaiProFormulario.putExtra("aluno", aluno);
+                startActivity(intentVaiProFormulario);
             }
         });
 

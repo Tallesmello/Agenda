@@ -3,7 +3,9 @@ package com.example.agendaalura;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Browser;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,8 +46,8 @@ public class ListaAlunoActivity extends AppCompatActivity {
                 Intent btnFormulario = new Intent(ListaAlunoActivity.this, FormularioActivity.class);
                 startActivity(btnFormulario);
             });
-        registerForContextMenu(listaAlunos);
 
+        registerForContextMenu(listaAlunos);
     }
     @Override
     protected void onResume() {
@@ -69,12 +71,25 @@ public class ListaAlunoActivity extends AppCompatActivity {
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, final ContextMenu.ContextMenuInfo menuInfo)  {
+
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+        final Aluno aluno = (Aluno) listaAlunos.getItemAtPosition(info.position);
+// click long + abrir um site direto do app
+        MenuItem itemSite = menu.add("visitar site");
+        Intent intentSite = new Intent(Intent.ACTION_VIEW);
+
+        String site = aluno.getSite();
+        if (!site.startsWith("http://")) {
+            site ="http://" + site;
+        }
+
+        intentSite.setData(Uri.parse(site));
+        itemSite.setIntent(intentSite);
+
         MenuItem deletar = menu.add("Deletar");
         deletar.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
-                Aluno aluno = (Aluno) listaAlunos.getItemAtPosition(info.position);
 
                 AlunoDAO dao = new AlunoDAO(ListaAlunoActivity.this);
                 dao.deleta(aluno);

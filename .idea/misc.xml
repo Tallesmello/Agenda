@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/tallesmello/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_formulario.xml" value="0.33" />
-        <entry key="..\:/Users/tallesmello/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_lista_aluno.xml" value="0.20018115942028986" />
+        <entry key="..\:/Users/tallesmello/AndroidStudioProjects/Agenda/app/src/main/res/drawable/fundo_botao.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/tallesmello/AndroidStudioProjects/Agenda/app/src/main/res/drawable/person.xml" value="0.2037037037037037" />
+        <entry key="..\:/Users/tallesmello/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_formulario.xml" value="0.25" />
+        <entry key="..\:/Users/tallesmello/AndroidStudioProjects/Agenda/app/src/main/res/layout/activity_lista_aluno.xml" value="0.25" />
         <entry key="..\:/Users/tallesmello/AndroidStudioProjects/AgendaAlura/app/src/main/res/layout/activity_formulario.xml" value="0.25" />
         <entry key="..\:/Users/tallesmello/AndroidStudioProjects/AgendaAlura/app/src/main/res/layout/activity_listaAlunos.xml" value="0.25" />
         <entry key="..\:/Users/tallesmello/AndroidStudioProjects/AgendaAlura/app/src/main/res/layout/activity_lista_aluno.xml" value="0.22" />
